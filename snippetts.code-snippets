@@ -1,0 +1,38 @@
+{
+  // GENERAL
+  "IF_ERROR": {
+    "scope": "typescript",
+    "prefix": "iferr",
+    "description": "Creates if error check",
+    "body": [
+      "if (${1:error}) {",
+      "  console.error(${1:error})",
+      "  $2",
+      "}"
+    ]
+  },
+  // NEXT.JS
+  "NEXT_API_FUNCTION": {
+    "scope": "typescript",
+    "prefix": "naf",
+    "description": "Creates a Next.js API function in a file.",
+    "body": [
+      "import { NextApiRequest, NextApiResponse } from \"next\";",
+      "",
+      "export async function ${TM_FILENAME_BASE}Handler(",
+      "  req: NextApiRequest,",
+      "  res: NextApiResponse",
+      ") {",
+      "  $1",
+      "}"
+    ]
+  },
+  "INTERNAL_SERVER_ERROR": {
+    "scope": "typescript",
+    "prefix": "ise",
+    "description": "returns 500 json with message internal server error",
+    "body": [
+      "return res.status(500).json({ message: 'Internal Server Error' })"
+    ]
+  },
+}
